@@ -1,0 +1,9 @@
+<div class="link-container">
+    <mat-card class="link-card" *ngFor="let link of links | async">
+      <mat-card-header>
+        <mat-card-title>
+      </mat-card-title>
+      </mat-card-header>
+            <mat-card-content><a href="{{link.url}}">{{link.title}}</a></mat-card-content>
+    </mat-card>
+    </div>

@@ -1,0 +1,12 @@
+.block-card {
+    max-width: 240px;
+    background-color: lightblue;
+    margin: 10px;
+}
+.block-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}

@@ -1,0 +1,12 @@
+.link-card {
+    max-width: 200px;
+    background-color: aqua;
+    margin: 10px;
+}
+.link-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
