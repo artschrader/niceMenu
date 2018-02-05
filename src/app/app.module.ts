@@ -16,6 +16,7 @@ import { MaterialModule } from './material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MenuComponent } from './menu/menu.component';
 import { LinkComponent } from './link/link.component';
+import { AddLinkComponent } from './dialogs/add-link/add-link.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { LinkComponent } from './link/link.component';
     HomeComponent,
     AdminComponent,
     MenuComponent,
-    LinkComponent
+    LinkComponent,
+    AddLinkComponent
   ],
   imports: [
     BrowserModule,
