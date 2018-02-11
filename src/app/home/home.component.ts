@@ -5,6 +5,8 @@ import 'rxjs/add/operator/map';
 import {Block} from '../models/block';
 import {Blockid} from '../models/blockid';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import { AddLinkComponent } from '../dialogs/add-link/add-link.component';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -16,31 +18,7 @@ export class HomeComponent implements OnInit {
 
   constructor(private afs: AngularFirestore, public dialog: MatDialog) {}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  ngOnInit() {
+   ngOnInit() {
     this.blocksCollection = this.afs.collection('blocks');
     this.blocks = this.blocksCollection.snapshotChanges().map(actions => {
       return actions.map(a => {
@@ -51,6 +29,8 @@ export class HomeComponent implements OnInit {
       }) ;
   }
   OpenDialog(id: string) {
+    const dialogRef = this.dialog.open(AddLinkComponent);
+    dialogRef.componentInstance.blockId = id;
 
   }
 

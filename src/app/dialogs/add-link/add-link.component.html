@@ -1,3 +1,10 @@
-<p>
-  add-link works!
-</p>
+<h2>Add Link</h2>
+  <form [formGroup]="form" >
+    <div>
+        <input class="form-control" formControlName="title">
+        <input class="form-control" formControlName="url">
+        <button type="button" color="warn" mat-raised-button mat-dialog-close="Cancel">Cancel</button>
+        <button type="submit" color="primary" mat-raised-button>Save</button>
+    </div>
+  </form>
+ 

@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ReactiveFormsModule, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Component, OnInit, Inject } from '@angular/core';
+import {  ReactiveFormsModule,FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 
 
@@ -9,12 +9,21 @@ import { Observable } from 'rxjs/Observable';
   styleUrls: ['./add-link.component.css']
 })
 export class AddLinkComponent implements OnInit {
-  title: string;
-  url: string;
+  form: FormGroup;
+  public blockId: string;
 
-  constructor() { }
+  constructor(@Inject(FormBuilder) fb: FormBuilder) {
+    this.form = fb.group({
+      title: 'title',
+      url: 'url'
+    });
+  }
 
   ngOnInit() {
+  }
+
+  onSubmit() {
+    
   }
 
 }
