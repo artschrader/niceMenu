@@ -1,7 +1,9 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import {  ReactiveFormsModule,FormGroup, FormBuilder, Validators } from '@angular/forms';
+import {  FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
-
+import { Link } from '../../models/link';
+import { DbService } from '../../services/db.service';
+import { MatDialogRef } from '@angular/material';
 
 @Component({
   selector: 'app-add-link',
@@ -9,21 +11,25 @@ import { Observable } from 'rxjs/Observable';
   styleUrls: ['./add-link.component.css']
 })
 export class AddLinkComponent implements OnInit {
-  form: FormGroup;
+  myForm: FormGroup;
   public blockId: string;
+  private link: Link;
 
-  constructor(@Inject(FormBuilder) fb: FormBuilder) {
-    this.form = fb.group({
-      title: 'title',
-      url: 'url'
-    });
+  constructor(private fb: FormBuilder, private db: DbService, public dialogRef: MatDialogRef<AddLinkComponent>) {
   }
 
   ngOnInit() {
+    this.myForm = this.fb.group({
+      title: ['', Validators.required],
+      url: ['', Validators.required]
+    });
   }
 
-  onSubmit() {
-    
+  addLink(post) {
+    console.log(post);
+    this.link = {'title': post.title, 'url': post.url};
+    this.db.addLink(this.blockId, this.link);
+    this.dialogRef.close();
   }
 
 }

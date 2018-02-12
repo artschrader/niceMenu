@@ -1,9 +1,8 @@
 <div class="link-container">
     <mat-card class="link-card" *ngFor="let link of links | async">
-      <mat-card-header>
-        <mat-card-title>
-      </mat-card-title>
-      </mat-card-header>
-            <mat-card-content><a href="{{link.url}}">{{link.title}}</a></mat-card-content>
+            <mat-card-content><a href="{{link.url}}">{{link.title}}</a>
+              <button mat-icon-button class="linkIcon"  (click)="deleteLink(l)"><mat-icon fontSet="fa" fontIcon="delete"></mat-icon></button>
+              <button mat-icon-button class="linkIcon"  (click)="editLink(l)"><mat-icon fontSet="fa" fontIcon="delete"></mat-icon></button>        
+            </mat-card-content>
     </mat-card>
     </div>
