@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     max-width: 200px;
-    background-color: aqua;
+    background-color: rgb(92, 164, 189);
     margin: 10px;
     width:80%;
 }
@@ -12,4 +12,7 @@
     justify-content: flex-start;
     align-items: flex-start;
     flex-wrap: wrap;
+}
+.link {
+    color: black;
 }
