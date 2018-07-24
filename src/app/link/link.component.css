@@ -2,9 +2,10 @@
     display: flex;
     flex-direction: column;
     max-width: 200px;
-    background-color: rgb(92, 164, 189);
+    background-color: whitesmoke;
     margin: 10px;
     width:80%;
+    padding:5px;
 }
 .link-container {
     display: flex;
