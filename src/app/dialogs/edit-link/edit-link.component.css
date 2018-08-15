@@ -1,7 +1,5 @@
+button {margin:10px;}
 .container {
   display:flex;
   justify-content: center;
-}
-.container button {
-  margin: 20px;
-}
+  }

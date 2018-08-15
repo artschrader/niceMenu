@@ -17,6 +17,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MenuComponent } from './menu/menu.component';
 import { LinkComponent } from './link/link.component';
 import { AddLinkComponent } from './dialogs/add-link/add-link.component';
+import { DeleteLinkComponent } from './dialogs/delete-link/delete-link.component';
+import { EditLinkComponent } from './dialogs/edit-link/edit-link.component';
 import { DbService } from './services/db.service';
 
 @NgModule({
@@ -26,7 +28,9 @@ import { DbService } from './services/db.service';
     AdminComponent,
     MenuComponent,
     LinkComponent,
-    AddLinkComponent
+    AddLinkComponent,
+    DeleteLinkComponent,
+    EditLinkComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +41,7 @@ import { DbService } from './services/db.service';
     MaterialModule,
     ReactiveFormsModule
   ],
-  entryComponents: [AddLinkComponent],
+  entryComponents: [AddLinkComponent, DeleteLinkComponent, EditLinkComponent],
   providers: [ DbService ],
   bootstrap: [AppComponent]
 })
